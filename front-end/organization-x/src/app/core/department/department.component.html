@@ -20,14 +20,19 @@
                 <th>{{ department.management }}</th>
                 <th>{{ department.description }}</th>
 
-                <th class="manage"><button mat-raised-button [routerLink]="[department.id + '/manage']"
+                <th class="manage">
+                    <button mat-raised-button [routerLink]="[department.id + '/manage']" title="Manage"
                         class="show-button"
                         (click)="showDepartmentEmployees(department.departmentName, department.employees)">
                         <mat-icon class="icon">tune</mat-icon>
                     </button>
                 </th>
-                <th class="edit"><button mat-raised-button [routerLink]="[department.id + '/edit']" class="edit-button"
-                        (click)="openEditForm(department)"><mat-icon class="icon">create</mat-icon></button></th>
+                <th class="edit">
+                    <button mat-raised-button [routerLink]="[department.id + '/edit']" class="edit-button" title="Edit"
+                        (click)="openEditForm(department)">
+                        <mat-icon class="icon">create</mat-icon>
+                    </button>
+                </th>
             </tr>
         </table>
     </div>

@@ -20,7 +20,7 @@
                 <th>{{ employee.age }}</th>
                 <th>{{ employee.position }}</th>
 
-                <th class="edit"><button mat-raised-button [routerLink]="[employee.id + '/edit']" class="edit-button"
+                <th class="edit" title="Edit"><button mat-raised-button [routerLink]="[employee.id + '/edit']" class="edit-button"
                         (click)="openEditForm(employee)"><mat-icon class="icon">create</mat-icon></button></th>
             </tr>
         </table>

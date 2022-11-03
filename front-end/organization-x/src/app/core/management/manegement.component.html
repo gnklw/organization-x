@@ -19,9 +19,9 @@
                 <th>{{ management.description }}</th>
 
                 <th class="manage"><button mat-raised-button [routerLink]="[management.id + '/manage']"
-                        class="show-button" (click)="showManagementDepartments(management)"><mat-icon class="icon">tune</mat-icon></button></th>
+                        class="show-button" title="Manage" (click)="showManagementDepartments(management)"><mat-icon class="icon">tune</mat-icon></button></th>
                 <th class="edit"><button mat-raised-button [routerLink]="[management.id + '/edit']"
-                        class="edit-button" (click)="openEditForm(management)"><mat-icon class="icon">create</mat-icon></button></th>
+                        class="edit-button" title="Edit" (click)="openEditForm(management)"><mat-icon class="icon">create</mat-icon></button></th>
             </tr>
         </table>
     </div>
