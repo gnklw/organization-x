@@ -1,0 +1,48 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+        format_sql: 'TRUE'
+        jdbc:
+          lob:
+            non_contextual_creation: 'true'
+    hibernate:
+      ddl-auto: update
+    open-in-view: 'false'
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: 'true'
+  datasource:
+    driverClassName: org.postgresql.Driver
+    password: ''
+    username: 'postgres'
+    url: jdbc:postgresql://localhost:5432/organization_x
+  #  sql:
+  #    init:
+  #      mode: always
+
+#security:
+ # basic: 
+   # enable: false
+  #ignored: '/**'  
+    #oauth2:
+    #  resourceserver:
+    #    jwt:
+    #     issuer-uri: http://localhost:8080/login
+
+#sample:
+#  jwe-key-value: classpath:simple.priv
+
+logging:
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor: TRACE
+        SQL: DEBUG
+      nodeValue: WARN
+    blog: WARN
+server:
+  port: 8081
