@@ -1,0 +1,29 @@
+<div class="grid-container" [infiniteScrollDistance]="2" infinite-scroll [infiniteScrollThrottle]="1000"
+    (scrolled)="onScroll()">
+
+    <div class="head-item">
+        <h1>Managements</h1>
+        <app-search></app-search>
+    </div>
+
+    <div class="body-item">
+        <table matSort (matSortChange)="sort($event)">
+            <tr>
+                <th mat-sort-header="name">Management</th>
+                <th mat-sort-header="director">Director</th>
+                <th>Description</th>
+            </tr>
+            <tr *ngFor="let management of managements">
+                <th>{{ management.managementName }}</th>
+                <th>{{ management.director.firstName + " " + management.director.lastName }}</th>
+                <th>{{ management.description }}</th>
+
+                <th class="manage"><button mat-raised-button [routerLink]="[management.id + '/manage']"
+                        class="show-button" (click)="showManagementDepartments(management)"><mat-icon class="icon">tune</mat-icon></button></th>
+                <th class="edit"><button mat-raised-button [routerLink]="[management.id + '/edit']"
+                        class="edit-button" (click)="openEditForm(management)"><mat-icon class="icon">create</mat-icon></button></th>
+            </tr>
+        </table>
+    </div>
+    <app-create-button></app-create-button>
+</div>

@@ -1,0 +1,20 @@
+<app-close-button></app-close-button>
+<h2>New employee</h2>
+<form [formGroup]="employee" class="create-form">
+    <label for="first_name">First name</label>
+    <input type="text" id="first_name" formControlName="firstName" placeholder="First name..">
+  
+    <label for="last_name">Last name</label>
+    <input type="text" id="last_name" formControlName="lastName" placeholder="Last name..">
+  
+    <label for="civil_id_number">Civil ID Number</label>
+    <input type="text" id="civil_id_number" formControlName="civilIDNumber" placeholder="Civil ID Number..">
+
+    <label for="age">Age</label>
+    <input type="number" id="age" formControlName="age" placeholder="Age..">
+
+    <label for="position">Position</label>
+    <input type="text" id="position" formControlName="position" placeholder="Position..">
+
+    <button class="create-button" type="submit" (click)="create()">Create</button>
+  </form>

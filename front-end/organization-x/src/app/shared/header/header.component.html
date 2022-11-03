@@ -1,0 +1,15 @@
+<header>
+    <nav class="nav navbar-nav">
+        <ul>
+            <li class="home">
+                <a *ngIf="isAuthenticated" routerLink="/home">Organization X</a>
+                <a *ngIf="!isAuthenticated" routerLink="/">Organization X</a>
+            </li>
+            <li *ngIf="isAuthenticated"><a routerLink="/managements">Managements</a></li>
+            <li *ngIf="isAuthenticated"><a routerLink="/departments">Departments</a></li>
+            <li *ngIf="isAuthenticated"><a routerLink="/employees">Employees</a></li>
+            <li *ngIf="!isAuthenticated" class="signin"><a routerLink="/signin">Sign in</a></li>
+            <li *ngIf="isAuthenticated" class="signout"><a routerLink="/signout" (click)="signout()">Sign out</a></li>
+        </ul>
+    </nav>
+</header>

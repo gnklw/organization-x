@@ -1,0 +1,11 @@
+<app-close-button></app-close-button>
+<h2>New department</h2>
+<form [formGroup]="department" class="create-form">
+  <label for="department_name">Department name</label>
+  <input type="text" id="department_name" formControlName="departmentName" placeholder="Department name..">
+
+  <label for="description">Description</label>
+  <input type="text" id="description" formControlName="description" placeholder="Description..">
+
+  <button class="create-button" type="submit" (click)="create()">Create</button>
+</form>

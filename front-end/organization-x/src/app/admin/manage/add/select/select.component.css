@@ -1,0 +1,60 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 49% 39% 9%;
+    gap: 10px;
+}
+
+.body-item {
+    grid-column: 1 / 4;
+}
+
+.body-item mat-dialog-content {
+    height: 300px;
+}
+
+.h-item h3 {
+    text-align: right;
+}
+
+.search-item {
+    margin-top: 2px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    width: 100%;
+}
+
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th:hover {
+    cursor: pointer;
+    background-color: #f7e5c7;
+}
+
+th:active {
+    background-color: #c7f5d3;
+}
+
+<!-- 
+
+.close-button {
+    float: right;
+    top: -24px;
+    right: -24px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+
+
+

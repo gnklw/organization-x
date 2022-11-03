@@ -1,0 +1,16 @@
+<form [formGroup]="registrationData" class="registration-form">
+    <h2>Register</h2>
+    <label for="username">Username</label>
+    <input type="text" id="username" formControlName="username" placeholder="Username..">
+
+    <label for="email">Email</label>
+    <input type="text" id="email" formControlName="email" placeholder="Email..">
+
+    <label for="password">Password</label>
+    <input type="password" id="password" formControlName="password" placeholder="Password..">
+
+    <label for="confirm_password">Confirm password</label>
+    <input type="password" id="confirm_password" formControlName="confirmPassword" placeholder="Confirm password..">
+
+    <button class="registration-button" type="submit" (click)="handleRegistration()">Registration</button>
+</form>

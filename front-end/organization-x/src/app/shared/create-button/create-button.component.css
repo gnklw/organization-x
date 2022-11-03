@@ -1,0 +1,23 @@
+button:hover {
+    opacity: 0.9;
+}
+
+.create-button {
+    background-color: #f2bb5b;
+    border: none;
+    border-radius: 30%;
+    color: white;
+    padding: 20px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 25px 23px;
+    cursor: pointer;
+}
+
+.create-button {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}

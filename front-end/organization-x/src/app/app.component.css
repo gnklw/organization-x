@@ -1,0 +1,17 @@
+.header {
+  grid-area: header;
+}
+
+.main {
+  grid-area: main;
+  margin: 0 15% 0 15%;
+  padding: 10px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header' 'header' 'header' 'header' 'header' 'header'
+    'main';
+  gap: 10px;
+}

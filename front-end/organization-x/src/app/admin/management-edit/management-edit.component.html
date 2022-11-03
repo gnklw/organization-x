@@ -1,0 +1,26 @@
+<app-close-button></app-close-button>
+<h2>Edit management</h2>
+<form class="edit-form">
+    <label for="management_name">Management Name:</label>
+    <input type="text" id="management_name" name="management_name" required minlength="2" [value]="managementName"
+        [(ngModel)]="managementName" #management_name="ngModel" />
+
+    <div>
+        <span *ngIf="management_name.errors?.['minlength']">
+            Management name must be at least 2 characters long.
+        </span>
+    </div>
+
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description" [value]="description" [(ngModel)]="description">
+
+    <button class="save-button" type="submit"
+        *ngIf="!management_name.errors?.['minlength'] && !management_name.errors?.['required']; else elseBlock"
+        (click)="update()">Save</button>
+
+    <ng-template #elseBlock>
+        <button class="save-button-disabled" type="submit" disabled>Save</button>
+    </ng-template>
+
+    <button class="delete-button" (click)="openConfirmDialog()">Delete</button>
+</form>

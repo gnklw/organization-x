@@ -1,0 +1,14 @@
+<div class="form">
+    <div>
+        <form [formGroup]="credentials" class="signin-form" >
+            <h2>Sign in</h2>
+            <label for="username">Username</label>
+            <input type="text" id="username" formControlName="username" placeholder="Username..">
+
+            <label for="password">Password</label>
+            <input type="password" id="password" formControlName="password" placeholder="Password..">
+
+            <button class="signin-button" type="submit" (click)="handleSignin()">Sign in</button>
+        </form>
+    </div>
+</div>

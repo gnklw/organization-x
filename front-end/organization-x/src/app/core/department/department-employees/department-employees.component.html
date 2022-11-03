@@ -1,0 +1,29 @@
+<div class="grid-container">
+    <div class="head-item">
+        <app-close-button></app-close-button>
+        <h2>Employees of the {{data.departmentName}} department</h2>
+        <app-search (searchTextEvent)="getSearchText($event)"></app-search>
+        <app-add [currentRecords]="data.employees"></app-add>
+    </div>
+ 
+    <div class="body-item">
+        <mat-dialog-content>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Position</th>
+                </tr>
+                <tr *ngFor="let employee of data.employees | filter:searchText">
+                    <th>{{ employee.firstName + " " + employee.lastName}}</th>
+                    <th>{{ employee.age }}</th>
+                    <th>{{ employee.position }}</th>
+                    <th class="remove-button">
+                        <app-remove [id]="employee.id" (removedRecordsEvent)="removeRecord($event)"></app-remove>
+                    </th>
+                </tr>
+            </table>
+        </mat-dialog-content>
+    </div>
+</div>
+

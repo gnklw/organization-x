@@ -1,0 +1,31 @@
+<div class="grid-container">
+    <div class="demo">
+        
+    </div>
+    <div class="head-item">
+        <app-close-button></app-close-button>
+        <h2>The departments of the {{management.managementName}} management</h2>
+        <app-search (searchTextEvent)="getSearchText($event)"></app-search>
+        <app-add [currentRecords]="management.departments"></app-add>
+    </div>
+
+    <div class="body-item">
+        <mat-dialog-content>
+            <table>
+                <tr>
+                    <th>Department</th>
+                    <th>Manager</th>
+                    <th>Description</th>
+                </tr>
+                <tr *ngFor="let department of management.departments | filter:searchText">
+                    <th>{{ department.departmentName }}</th>
+                    <th>{{ department.departmentManager.firstName + " " + department.departmentManager.lastName}}</th>
+                    <th>{{ department.description }}</th>
+                    <th class="remove-button">
+                        <app-remove [id]="department.id" (removedRecordsEvent)="removeRecord($event)"></app-remove>
+                    </th>
+                </tr>
+            </table>
+        </mat-dialog-content>
+    </div>
+</div>

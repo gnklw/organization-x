@@ -1,0 +1,31 @@
+<app-close-button></app-close-button>
+<h2>Edit employee</h2>
+<form class="edit-form">
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="first_name" required minlength="2" [value]="firstName"
+        [(ngModel)]="firstName" #first_name="ngModel" />
+
+    <div>
+        <span *ngIf="first_name.errors?.['minlength']">
+            First name must be at least 2 characters long.
+        </span>
+    </div>
+
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" name="last_name" required minlength="2" [value]="lastName" [(ngModel)]="lastName"
+        #last_name="ngModel" />
+
+    <p *ngIf="last_name.errors?.['minlength']">
+        Last name must be at least 2 characters long.
+    </p>
+
+    <button class="save-button" type="submit" *ngIf="(!first_name.errors?.['minlength'] && !first_name.errors?.['required']) 
+                && (!last_name.errors?.['minlength'] && !last_name.errors?.['required']); else elseBlock"
+        (click)="update()">Save</button>
+
+    <ng-template #elseBlock>
+        <button class="save-button-disabled" type="submit" value="Save" disabled>Save</button>
+    </ng-template>
+
+    <button class="delete-button" (click)="openConfirmDialog()">Delete</button>
+</form>

@@ -1,0 +1,16 @@
+.remove {
+	border: none;
+  color: white;
+	background-color: #ba0000;
+	font-size: 8px;
+	height: 2.5em;
+	width: 2.5em;
+	border-radius: 999px;
+	position: relative;
+}
+
+.remove:hover,
+.remove:focus {
+  opacity: 0.9;
+  cursor: pointer;
+}

@@ -1,0 +1,27 @@
+<app-close-button></app-close-button>
+<h2>Edit department</h2>
+<form class="edit-form">
+    <label for="department_name">Department:</label>
+    <input type="text" id="department_name" name="department_name" required minlength="2" [value]="departmentName"
+        [(ngModel)]="departmentName" #department_name="ngModel" />
+
+    <div>
+        <span *ngIf="department_name.errors?.['minlength']">
+            Department name must be at least 2 characters long.
+        </span>
+    </div>
+
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description" [value]="description" [(ngModel)]="description">
+
+    <button class="save-button" type="submit"
+        *ngIf="!department_name.errors?.['minlength'] && !department_name.errors?.['required']; else elseBlock"
+        (click)="update()">Save</button>
+
+    <ng-template #elseBlock>
+        <button class="save-button-disabled" type="submit" disabled>Save</button>
+    </ng-template>
+
+    <button class="delete-button" (click)="openConfirmDialog()">Delete</button>
+
+</form>

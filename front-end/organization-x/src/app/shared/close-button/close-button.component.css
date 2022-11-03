@@ -1,0 +1,15 @@
+.close-button {
+    float: right;
+    top: -24px;
+    right: -24px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+
+

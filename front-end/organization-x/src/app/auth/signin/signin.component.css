@@ -1,0 +1,46 @@
+.form {
+    /* Center vertically and horizontally */
+    width: 400px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input[type=text],
+input[type=password],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+button {
+    margin-top: 16px;
+}
+
+.signin-button {
+    background-color: #008CBA;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.signin-form {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}

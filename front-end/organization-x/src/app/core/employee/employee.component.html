@@ -1,0 +1,29 @@
+<div class="grid-container" infinite-scroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="1000"
+    (scrolled)="onScroll()">
+
+    <div class="head-item">
+        <h1>Employees</h1>
+        <app-search></app-search>
+    </div>
+
+    <div class="body-item">
+        <table matSort (matSortChange)="sort($event)">
+            <tr>
+                <th mat-sort-header="name">Name</th>
+                <th mat-sort-header="civilIdNumber">Civil ID Number</th>
+                <th mat-sort-header="age">Age</th>
+                <th mat-sort-header="position">Position</th>
+            </tr>
+            <tr *ngFor="let employee of employees">
+                <th>{{ employee.firstName + " " + employee.lastName}}</th>
+                <th>{{ employee.civilIDNumber }}</th>
+                <th>{{ employee.age }}</th>
+                <th>{{ employee.position }}</th>
+
+                <th class="edit"><button mat-raised-button [routerLink]="[employee.id + '/edit']" class="edit-button"
+                        (click)="openEditForm(employee)"><mat-icon class="icon">create</mat-icon></button></th>
+            </tr>
+        </table>
+    </div>
+    <app-create-button></app-create-button>
+</div>

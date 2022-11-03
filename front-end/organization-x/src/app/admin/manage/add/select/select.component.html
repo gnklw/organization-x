@@ -1,0 +1,33 @@
+<div class="grid-container">
+    <div class="h-item">
+        <h3>Select {{h3Value}}</h3>
+    </div>
+
+    <div class="search-item">
+        <app-search (searchTextEvent)="getSearchText($event)"></app-search>
+    </div>
+
+    <!-- todo: needed to be import from app module -->
+    <div class="close-button-item">
+        <button title="Close" mat-icon-button class="close-button" [mat-dialog-close]="true">
+            <mat-icon class="close-icon" color="warn">close</mat-icon>
+        </button>
+    </div>
+
+    <div class="body-item">
+        <mat-dialog-content>
+            <table *ngIf="checkUrl(); else employees">
+                <tr *ngFor="let department of available | filter:searchText">
+                    <th (click)="add(department.id)">{{ department.departmentName }}</th>
+                </tr>
+            </table>
+            <ng-template #employees>
+                <table>
+                    <tr *ngFor="let employee of available | filter:searchText">
+                        <th (click)="add(employee.id)">{{ employee.firstName + " " + employee.lastName }}</th>
+                    </tr>
+                </table>
+            </ng-template>
+        </mat-dialog-content>
+    </div>
+</div>
